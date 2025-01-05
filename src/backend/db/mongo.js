@@ -1,8 +1,8 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 
 // Connection string from MongoDB Atlas
-const connectionString =
-	"mongodb+srv://rachellevanuden:1234@sharedcluster.8uk56.mongodb.net/DPSMeter?retryWrites=true&w=majority&appName=SharedCluster";
+const connectionString = process.env.MONGO_URI;
 
 // Connect to MongoDB
 mongoose.connect(connectionString, {
