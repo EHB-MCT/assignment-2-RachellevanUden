@@ -41,11 +41,17 @@ git clone https://github.com/EHB-MCT/assignment-2-RachellevanUden.git
   `npm install`
 
 **Configure MongoDB**
+To connect to the database, you need to create a `.env` file in the backend folder of the project and add the following:
+`MONGO_URI=mongodb+srv://<your-username>:<your-password>@sharedcluster.mongodb.net/DPSMeter?retryWrites=true&w=majority&appName=SharedCluster`
 
-1. Create a MongoDB Atlas cluster or connect to an existing one.
-2. Update the connection string in `src/backend/db/mongo.js`: <br>
-   `const connectionString = 'your-mongodb-connection-string';`
-3. Ensure your database includes a collection named `encounters`.
+Replace `<your-username>` and `<your-password>` with your MongoDB Atlas credentials.
+If you don't have a MongoDB Atlas account, follow these steps:
+
+1. [Create a MongoDB Atlas account](https://www.mongodb.com/cloud/atlas/register).
+2. Set up a free cluster.
+3. Add a new database user with read and write permissions.
+4. Copy your connection string and update the `MONGO_URI` in the `.env` file.
+5. Users with API-endpoints like `api/encounters` will have access to the data.
 
 **Start the project (runs both frontend and backend simultaneously)**:<br>
 `cd ../..`<br>

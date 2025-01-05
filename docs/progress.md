@@ -124,3 +124,12 @@ Installed and configured the necessary tools, such as:
 
 - Removed unused folders (config, services, etc.) to simplify the project structure.
 - Finalized comments and removed console.logs.
+
+5. **Securing MongoDB Connection** <br>
+   Initially, the MongoDB connection string with credentials was hardcoded in the project. To improve security:
+
+- The `dotenv` package was added to manage environment variables.
+- A `.env` file was created to store sensitive information such as the `MONGO_URI`.
+- Instructions for setting up MongoDB and configuring the `.env` file were added to the README.
+
+This change ensures that sensitive credentials are not exposed in the repository.
